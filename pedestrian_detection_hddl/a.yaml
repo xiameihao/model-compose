@@ -1,9 +1,9 @@
 version: '2'
 services:
-  test_one_model: 
+  test_one_model22: 
     command: python3 /faceid_deploy/faceid_restful_server_ai_model/main.py --host 0.0.0.0 --port 5000
     image: 'ccr.ccs.tencentyun.com/aiot-test/vino-py3.6-flask'
-    container_name: test_one_model
+    container_name: test_one_model22
     volumes:
       - /home/hddl/Downloads/faceid_deploy/:/faceid_deploy
       - /dev:/dev
