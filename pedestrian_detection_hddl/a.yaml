@@ -1,9 +1,9 @@
 version: '2'
 services:
-  a: 
+  test_one_model: 
     command: /bin/bash -c "source /opt/intel/openvino/bin/setupvars.sh && /ie-serving-py/start_server.sh ie_serving model --model_path /opt/ml/pedestrian_detection_hddl --model_name pedestrian_detection_hddl --port 9001 --rest_port 8001"
     image: 'ccr.ccs.tencentyun.com/aiot-test/pedestrian_detection_hddl:latest'
-    container_name: a
+    container_name: test_one_model
     volumes:
       - /var/tmp:/var/tmp
       - /dev:/dev
