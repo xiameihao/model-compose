@@ -1,8 +1,8 @@
 version: '2'
 services:
   test_one_model: 
-    command: /bin/bash -c "source /opt/intel/openvino/bin/setupvars.sh && /ie-serving-py/start_server.sh ie_serving model --model_path /opt/ml/pedestrian_detection_hddl --model_name pedestrian_detection_hddl --port 9001 --rest_port 8001"
-    image: 'ccr.ccs.tencentyun.com/aiot-test/pedestrian_detection_hddl:latest'
+    command: python3 /faceid_deploy/faceid_restful_server_ai_model/main.py --host 0.0.0.0 --port 5000
+    image: 'ccr.ccs.tencentyun.com/aiot-test/vino-py3.6-flask'
     container_name: test_one_model
     volumes:
       - /home/hddl/Downloads/faceid_deploy/:/faceid_deploy
