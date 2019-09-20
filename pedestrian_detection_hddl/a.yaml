@@ -1,9 +1,9 @@
 version: '2'
 services:
-  test_one_model22: 
+  test_one_model212: 
     command: /bin/bash -c "source /opt/intel/openvino/bin/setupvars.sh && /ie-serving-py/start_server.sh ie_serving model --model_path /opt/ml/pedestrian_detection_hddl --model_name pedestrian_detection_hddl --port 9001 --rest_port 8001"
     image: 'ccr.ccs.tencentyun.com/aiot-test/pedestrian_detection_hddl:latest'
-    container_name: test_one_model22
+    container_name: test_one_model212
     volumes:
       - /var/tmp:/var/tmp
       - /dev:/dev
@@ -16,13 +16,7 @@ services:
     ports:
       - '8001:8001'
       - '9100:9000'
-    stdin_open: true
-    tty: true
     privileged: true
     environment:
-      - LD_LIBRARY_PATH=/opt/intel/openvino_2019.2.242/opencv/lib:/opt/intel/opencl:/opt/intel/openvino_2019.2.242/deployment_tools/inference_engine/external/hddl/lib:/opt/intel/openvino_2019.2.242/deployment_tools/inference_engine/external/gna/lib:/opt/intel/openvino_2019.2.242/deployment_tools/inference_engine/external/mkltiny_lnx/lib:/opt/intel/openvino_2019.2.242/deployment_tools/inference_engine/external/tbb/lib:/opt/intel/openvino_2019.2.242/deployment_tools/inference_engine/lib/intel64:/opt/intel/openvino_2019.2.242/openvx/lib
-      - PYTHONPATH=/opt/intel/openvino_2019.2.242/python/python3.6:/opt/intel/openvino_2019.2.242/python/python3:/opt/intel/openvino_2019.2.242/deployment_tools/model_optimizer:/faceid_deploy
       - DEVICE=HDDL
       - CPU_EXTENSION=/libcpu_extension_sse4.so
-    network_mode: host
-      
